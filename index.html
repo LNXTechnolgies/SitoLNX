@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LNX Technologies</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="csshomefake.css">
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="LNX">
+  <link rel="manifest" href="site.webmanifest">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+  (function() {
+    emailjs.init({ publicKey: "QBUJ0glCnp0Nw7Iy3", blockHeadless: false });
+  })();
+  </script>
+</head>
+<body>
+<main>
+<div class="page-wrap">
+
+  <div class="header">
+    <picture class="imageUp">
+      <img src="LNX_logo.png" alt="Logo LNX Technologies">
+    </picture>
+    <h1 class="titoloPagina">LNX TECHNOLOGIES</h1>
+  </div>
+
+  <div class="hero-slideshow">
+    <div class="hero-slide" style="background-image:url('Foto1.jpeg')"><img src="Foto1.jpeg" alt="Foto 1"></div>
+    <div class="hero-slide" style="background-image:url('Foto2.png')"><img src="Foto2.png"  alt="Foto 2"></div>
+    <div class="hero-slide" style="background-image:url('vetro.png')"><img src="vetro.png"  alt="Foto 3"></div>
+    <div class="hero-slide" style="background-image:url('Foto4.png')"><img src="Foto4.png"  alt="Foto 4"></div>
+    <div class="hero-overlay">
+      <p class="hero-label">LA TUA TECNOLOGIA, LA NOSTRA PASSIONE</p>
+      <h2 class="hero-title">Soluzioni tech<br><span>su misura per te</span></h2>
+    </div>
+  </div>
+
+  <section class="contact-section">
+    <div class="contact-card">
+      <p class="section-label">CONTATTI</p>
+      <h2 class="section-title">Contattaci</h2>
+
+      <div id="contact-choice">
+        <p class="contact-subtitle">Scegli come preferisci contattarci:</p>
+        <div class="contact-choice-actions">
+          <button type="button" class="contact-choice-btn" onclick="showSiteForm()">Dal sito</button>
+          <button type="button" class="contact-choice-btn secondary" onclick="showSocialChoice()">Dai social</button>
+        </div>
+      </div>
+
+      <div id="contact-site" hidden>
+        <p class="contact-subtitle">Scrivici per qualsiasi informazione. Ti risponderemo via email o WhatsApp.</p>
+        <form class="contact-form" onsubmit="handleContact(event)">
+          <label>Nome
+            <input type="text" name="nome" placeholder="Es. Mario" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" placeholder="Es. esempio@email.com" required>
+          </label>
+          <label>Telefono
+            <input type="tel" name="telefono" placeholder="Es. 366-1234567">
+          </label>
+          <label>Messaggio
+            <textarea name="messaggio" rows="5" placeholder="Scrivi il tuo messaggio..." required></textarea>
+          </label>
+          <button type="submit">Invia</button>
+        </form>
+        <p class="contact-msg" id="contact-msg" hidden>Messaggio inviato! Ti risponderemo presto.</p>
+        <button type="button" class="contact-back" onclick="backToChoice()">← Indietro</button>
+      </div>
+
+      <div id="contact-social" hidden>
+        <p class="contact-subtitle">Seguici e scrivici sui nostri social:</p>
+        <div class="social-icons">
+          <a class="social-link" href="https://www.facebook.com/share/19K3K7gDQd/?mibextid=wwXIfr" target="_blank" rel="noopener"><img src="Facebook.png" alt="Facebook"><span>Facebook</span></a>
+          <a class="social-link" href="https://www.instagram.com/lnx_technologies?igsh=MWh6YzgxMWVoYmtibQ%3D%3D&utm_source=qr" target="_blank" rel="noopener"><img src="Instagram.png" alt="Instagram"><span>Instagram</span></a>
+          <a class="social-link" href="https://www.tiktok.com/@lnx_technologies?_r=1&_t=ZN-97cVjkg3t2s" target="_blank" rel="noopener"><img src="Tiktok.png" alt="TikTok"><span>TikTok</span></a>
+          <a class="social-link" href="https://www.youtube.com/@LNXTechnologies" target="_blank" rel="noopener"><img src="Youtube.png" alt="YouTube"><span>YouTube</span></a>
+        </div>
+        <button type="button" class="contact-back" onclick="backToChoice()">← Indietro</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    <div class="columns1"><img class="logoF" src="LNX_logo.png" alt="Logo"></div>
+    <div class="columns2">
+      <h3 class="TitoloFooter">LNX Technologies</h3>
+      <p class="descrizioniF">
+        <a class="linkFooter" onclick="openSocial()">Dove ci trovi?</a>
+      </p>
+
+    </div>
+    <div class="columns3">
+      <h3 class="TitoloFooter">Contatti</h3>
+      <p class="descrizioniF">366-878-1188</p>
+      <p class="descrizioniF">info.lnxtechnologies@gmail.com</p>
+    </div>
+  </div>
+
+</div>
+</main>
+<!-- POPUP SOCIAL -->
+  <div class="social-overlay" id="socialOverlay" onclick="handleSocialOverlay(event)">
+    <div class="social-box" id="socialBox">
+      <button class="social-close" onclick="closeSocial()">✕</button>
+      <span class="social-tag">Rimani aggiornato</span>
+      <h2 class="social-title">Seguici sui Social</h2>
+      <div class="social-icons">
+
+        <a class="social-link" href="https://www.facebook.com/share/19K3K7gDQd/?mibextid=wwXIfr" target="_blank" rel="noopener">
+          <img src="Facebook.png" alt="Facebook">
+          <span>Facebook</span>
+        </a>
+
+        <a class="social-link" href="https://www.instagram.com/lnx_technologies?igsh=MWh6YzgxMWVoYmtibQ%3D%3D&utm_source=qr" target="_blank" rel="noopener">
+          <img src="Instagram.png" alt="Instagram">
+          <span>Instagram</span>
+        </a>
+
+        <a class="social-link" href="https://www.tiktok.com/@lnx_technologies?_r=1&_t=ZN-97cVjkg3t2s" target="_blank" rel="noopener">
+          <img src="Tiktok.png" alt="TikTok">
+          <span>TikTok</span>
+        </a>
+
+        <a class="social-link" href="https://www.youtube.com/@LNXTechnologies" target="_blank" rel="noopener">
+          <img src="Youtube.png" alt="YouTube">
+          <span>YouTube</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+<script>
+let heroIdx = 0;
+function runHero() {
+  const slides = document.querySelectorAll('.hero-slide');
+  slides.forEach(s => s.classList.remove('active'));
+  heroIdx = (heroIdx + 1) % slides.length;
+  slides[heroIdx].classList.add('active');
+  setTimeout(runHero, 6000);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.hero-slide')[0].classList.add('active');
+  setTimeout(runHero, 6000);
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+});
+
+function handleContact(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const originalText = btn.textContent;
+  btn.textContent = 'Invio...';
+  btn.disabled = true;
+
+  const params = {
+    tipo: 'Contatto',
+    nome: form.nome.value,
+    cognome: '',
+    problema: form.messaggio.value,
+    telefono: form.telefono.value,
+    email: form.email.value
+  };
+
+  emailjs.send('service_oi7d9l9', 'template_83slu6l', params)
+    .then(function() {
+      const msg = document.getElementById('contact-msg');
+      if (msg) msg.hidden = false;
+      form.reset();
+      btn.textContent = originalText;
+      btn.disabled = false;
+    })
+    .catch(function(error) {
+      console.error('Errore EmailJS:', error);
+      alert('Errore nell\'invio: ' + (error.text || error.message || 'Errore sconosciuto'));
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+}
+
+function showSiteForm() {
+  document.getElementById('contact-choice').hidden = true;
+  document.getElementById('contact-social').hidden = true;
+  document.getElementById('contact-site').hidden = false;
+}
+function showSocialChoice() {
+  document.getElementById('contact-choice').hidden = true;
+  document.getElementById('contact-site').hidden = true;
+  document.getElementById('contact-social').hidden = false;
+}
+function backToChoice() {
+  document.getElementById('contact-site').hidden = true;
+  document.getElementById('contact-social').hidden = true;
+  document.getElementById('contact-choice').hidden = false;
+  const msg = document.getElementById('contact-msg');
+  if (msg) msg.hidden = true;
+}
+
+function openSocial() {
+  document.getElementById('socialOverlay').classList.add('open');
+}
+function closeSocial() {
+  document.getElementById('socialOverlay').classList.remove('open');
+}
+function handleSocialOverlay(e) {
+  if (e.target === document.getElementById('socialOverlay')) closeSocial();
+}
+</script>
+</body>
+</html>
